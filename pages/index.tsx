@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Footer from "../components/Footer";
+import PortfolioCard from "../components/PortfolioCard";
 import portfolioImg from "../public/portfolio_image.jpg";
 const Home: NextPage = () => {
   return (
@@ -34,7 +36,6 @@ const Home: NextPage = () => {
       </div>
       <div>Portfolio cards</div>
       <div>contact info</div>
-      <div>Footer component</div>
     </div>
   );
 };
