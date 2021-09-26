@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       <div className="flex flex-col md:flex-row">
         <div className="text-center p-7 sm:float-right md:w-11/12  md:py-64">
           <h1 className="text-grey-900 text-2xl sm:text-4xl md:text-6xl">
-            Eoghan O'Sullivan
+            Eoghan O Sullivan
           </h1>
           <h2 className="text-grey-500 text-xl sm:text-2xl md:text-4xl">
             Web Developer
