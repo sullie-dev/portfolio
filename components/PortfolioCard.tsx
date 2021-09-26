@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import Image from "next/image";
 
 export interface CardProps {
   title: string;
@@ -11,7 +12,7 @@ export default function PortfolioCard(props: CardProps): ReactElement {
   return (
     <div className="alighn-center w-full p-3 float-left md:w-6/12 lg:w-3/12">
       <h1>{props.title}</h1>
-      <img src={props.image} />
+      <Image src={props.image} alt={props.title} />
       <ul>
         {props.stack.map((stacks) => (
           <li key={stacks}>{stacks}</li>
