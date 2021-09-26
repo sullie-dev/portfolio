@@ -13,7 +13,7 @@ export default function PortfolioCard(props: CardProps): ReactElement {
   return (
     <div className="alighn-center w-full p-3 float-left md:w-6/12 lg:w-3/12">
       <h1>{props.title}</h1>
-      <Image src={ProjectImage} alt={props.title} layout="fill" />
+      <Image src={ProjectImage} alt={props.title} />
       <ul>
         {props.stack.map((stacks) => (
           <li key={stacks}>{stacks}</li>
