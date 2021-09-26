@@ -37,25 +37,21 @@ const Home: NextPage = () => {
       <div>
         <PortfolioCard
           title="Test"
-          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
           url="https://google.com"
           stack={["html", "javascripy", "css"]}
         />
         <PortfolioCard
           title="Test"
-          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
           url="https://google.com"
           stack={["html", "javascripy", "css"]}
         />
         <PortfolioCard
           title="Test"
-          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
           url="https://google.com"
           stack={["html", "javascripy", "css"]}
         />
         <PortfolioCard
           title="Test"
-          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
           url="https://google.com"
           stack={["html", "javascripy", "css"]}
         />
