@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import Image from "next/image";
-import ProjectImage from "../public/test.jpg";
+import ProjectImage from "../public/test.jpeg";
 
 export interface CardProps {
   title: string;
