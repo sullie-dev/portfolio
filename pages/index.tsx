@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           stack={["html", "javascripy", "css"]}
         />
       </div>
-      <div>contact info</div>
+      <div>contact info 2</div>
     </div>
   );
 };
