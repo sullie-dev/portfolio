@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-
+import portfolioImg from "../public/portfolio_image.jpg";
 const Home: NextPage = () => {
   return (
     <div>
@@ -19,10 +18,21 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <div>
-        <div>image</div>
-        <div>about</div>
+      <div className="flex flex-col md:flex-row">
+        <div className="text-center p-7 sm:float-right md:w-11/12  md:py-64">
+          <h1 className="text-grey-900 text-2xl sm:text-4xl md:text-6xl">
+            Eoghan O'Sullivan
+          </h1>
+          <h2 className="text-grey-500 text-xl sm:text-2xl md:text-4xl">
+            Web Developer
+          </h2>
+        </div>
+        <Image
+          src={portfolioImg}
+          className="w-10 p-7 rounded-full sm:float-right md:w-1/12"
+        />
       </div>
+
       <div>Portfolio cards</div>
       <div>contact info</div>
       <div>Footer component</div>
