@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import PortfolioCard from "../components/PortfolioCard";
-import portfolioImg from "../public/portfolio_image.JPG";
+import portfolioImg from "/public/portfolio_image.jpg";
 const Home: NextPage = () => {
   return (
     <div>
