@@ -34,7 +34,32 @@ const Home: NextPage = () => {
           className="w-10 p-7 rounded-full sm:float-right md:w-1/12"
         />
       </div>
-      <div>Portfolio cards</div>
+      <div>
+        <PortfolioCard
+          title="Test"
+          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
+          url="https://google.com"
+          stack={["html", "javascripy", "css"]}
+        />
+        <PortfolioCard
+          title="Test"
+          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
+          url="https://google.com"
+          stack={["html", "javascripy", "css"]}
+        />
+        <PortfolioCard
+          title="Test"
+          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
+          url="https://google.com"
+          stack={["html", "javascripy", "css"]}
+        />
+        <PortfolioCard
+          title="Test"
+          image="https://i1.wp.com/www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?resize=575%2C419"
+          url="https://google.com"
+          stack={["html", "javascripy", "css"]}
+        />
+      </div>
       <div>contact info</div>
     </div>
   );
