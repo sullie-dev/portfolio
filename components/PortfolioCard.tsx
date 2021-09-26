@@ -18,7 +18,9 @@ export default function PortfolioCard(props: CardProps): ReactElement {
         ))}
       </ul>
       <button className="mt-5 bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
-        <a href={props.url}>Visit the project</a>
+        <a href={props.url} target="_blank">
+          Visit the project
+        </a>
       </button>
     </div>
   );

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content="Portfolio website for Eoghan O'Sullivan a Cork based web developer"
+          content="Portfolio website for Eoghan O Sullivan a Cork based web developer"
         />
         <meta
           name="keywords"
