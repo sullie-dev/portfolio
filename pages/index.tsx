@@ -32,7 +32,6 @@ const Home: NextPage = () => {
           className="w-10 p-7 rounded-full sm:float-right md:w-1/12"
         />
       </div>
-
       <div>Portfolio cards</div>
       <div>contact info</div>
       <div>Footer component</div>
