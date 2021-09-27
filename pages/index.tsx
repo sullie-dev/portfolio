@@ -7,7 +7,6 @@ import portfolioImg from "/public/portfolio.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebookF,
   faInstagram,
   faTwitter,
   faGithub,
@@ -74,7 +73,7 @@ const Home: NextPage = () => {
         <a
           href="http://twitter.com/drunkdarthvader"
           aria-label="Follow me on Twitter @drunkdarthvader"
-          rel="noopener"
+          rel="noreferrer noopener"
           target="_blank"
         >
           <h3 className="text-l md:text-xl md:w-3/12 float-left">
@@ -84,7 +83,7 @@ const Home: NextPage = () => {
         <a
           href="http://instagram.com/drunkdarkvader"
           aria-label="Follow my on Instagram @sullie-dev"
-          rel="noopener"
+          rel="noreferrer noopener"
           target="_blank"
         >
           <h3 className="text-l md:text-xl md:w-3/12 float-left">
@@ -94,7 +93,7 @@ const Home: NextPage = () => {
         <a
           href="http://github.com/sullie-dev"
           aria-label="Follow my on Github @sullie-dev"
-          rel="noopener"
+          rel="noreferrer noopener"
           target="_blank"
         >
           <h3 className="text-l md:text-xl md:w-3/12 float-left">
