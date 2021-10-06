@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export interface CardProps {
   title: string;
-  image: string;
+  image: any;
   stack: string[];
   url: string;
 }

@@ -18,7 +18,7 @@ interface projectProp {
   project_name: string;
   url: string;
   stack: string[];
-  image: string;
+  image: any;
 }
 
 // Create a query called homepageQuery
@@ -82,7 +82,7 @@ const Home: NextPage = ({ data }: any) => {
             title={project.project_name}
             url={project.url}
             stack={project.stack}
-            image={project.image}
+            image={project.image.url}
           />
         ))}
       </div>
