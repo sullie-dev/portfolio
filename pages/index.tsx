@@ -78,6 +78,7 @@ const Home: NextPage = ({ data }: any) => {
         <h2 className="text-center mb-12 text-2xl md:text-2xl">Projects</h2>
         {projectData.map((project: projectProp) => (
           <PortfolioCard
+            key={project.project_name}
             title={project.project_name}
             url={project.url}
             stack={project.stack}
