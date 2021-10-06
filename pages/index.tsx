@@ -14,6 +14,13 @@ import {
 import { GetStaticProps } from "next";
 import client from "../lib/sanity";
 
+interface projectProp {
+  project_name: string;
+  url: string;
+  stack: string[];
+  image: string;
+}
+
 // Create a query called homepageQuery
 const projectQuery = `*[_type == "projects"]{
   project_name,
@@ -37,7 +44,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage = ({ data }) => {
+const Home: NextPage = ({ data }: any) => {
   const { projectData } = data;
 
   return (
@@ -69,12 +76,12 @@ const Home: NextPage = ({ data }) => {
       </div>
       <div className="inline-block w-full">
         <h2 className="text-center mb-12 text-2xl md:text-2xl">Projects</h2>
-        {projectData.map((project) => (
+        {projectData.map((project: projectProp) => (
           <PortfolioCard
             title={project.project_name}
             url={project.url}
             stack={project.stack}
-            image={project.image.url}
+            image={project.image}
           />
         ))}
       </div>
