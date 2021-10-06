@@ -11,8 +11,35 @@ import {
   faTwitter,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { GetStaticProps } from "next";
+import client from "../lib/sanity";
 
-const Home: NextPage = () => {
+// Create a query called homepageQuery
+const projectQuery = `*[_type == "projects"]{
+  project_name,
+  url,
+  image {
+    ...asset->
+  },
+  stack
+}`;
+
+export async function getStaticProps() {
+  const projectData = await client.fetch(projectQuery);
+
+  const data = { projectData };
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 1,
+  };
+}
+
+const Home: NextPage = ({ data }) => {
+  const { projectData } = data;
+
   return (
     <div>
       <Head>
@@ -27,7 +54,6 @@ const Home: NextPage = () => {
           content="developer, web developer, irish developer, react.js developer"
         />
       </Head>
-
       <div className="flex flex-col md:flex-row">
         <div className="text-center p-7 sm:float-right md:w-11/12  md:py-64">
           <h1 className="text-gray-600 text-2xl sm:text-4xl md:text-6xl">
@@ -41,65 +67,62 @@ const Home: NextPage = () => {
           <Image src={portfolioImg} className=" rounded-full " />
         </div>
       </div>
-      <div>
+      <div className="inline-block w-full">
         <h2 className="text-center mb-12 text-2xl md:text-2xl">Projects</h2>
-        <PortfolioCard
-          title="Test"
-          url="https://google.com"
-          stack={["html", "javascripy", "css"]}
-        />
-        <PortfolioCard
-          title="Test"
-          url="https://google.com"
-          stack={["html", "javascripy", "css"]}
-        />
-        <PortfolioCard
-          title="Test"
-          url="https://google.com"
-          stack={["html", "javascripy", "css"]}
-        />
-        <PortfolioCard
-          title="Test"
-          url="https://google.com"
-          stack={["html", "javascripy", "css"]}
-        />
+        {projectData.map((project) => (
+          <PortfolioCard
+            title={project.project_name}
+            url={project.url}
+            stack={project.stack}
+            image={project.image.url}
+          />
+        ))}
       </div>
-      <div className="mt-5 p-15 text-center">
+      {/* Contact */}
+      <div className="inline-block mt-5 p-15 h-auto w-full">
         <h2 className="text-center text-2xl md:text-2xl">Contact me</h2>
 
-        <h3 className="text-l w-full md:text-xl md:w-3/12 float-left">
-          <FontAwesomeIcon icon={faEnvelope} /> eoghan@sullie.dev
-        </h3>
-        <a
-          href="http://twitter.com/drunkdarthvader"
-          aria-label="Follow me on Twitter @drunkdarthvader"
-          rel="noreferrer noopener"
-          target="_blank"
-        >
-          <h3 className="text-l md:text-xl md:w-3/12 float-left">
-            <FontAwesomeIcon icon={faTwitter} /> @drunkdarthvader
+        <div className="w-full float-left md:w-6/12 lg:w-3/12">
+          <h3 className="text-l text-center md:text-xl md:w-3/12">
+            <FontAwesomeIcon icon={faEnvelope} /> eoghan@sullie.dev
           </h3>
-        </a>
-        <a
-          href="http://instagram.com/drunkdarkvader"
-          aria-label="Follow my on Instagram @sullie-dev"
-          rel="noreferrer noopener"
-          target="_blank"
-        >
-          <h3 className="text-l md:text-xl md:w-3/12 float-left">
-            <FontAwesomeIcon icon={faInstagram} /> @drunkdarkvader
-          </h3>
-        </a>
-        <a
-          href="http://github.com/sullie-dev"
-          aria-label="Follow my on Github @sullie-dev"
-          rel="noreferrer noopener"
-          target="_blank"
-        >
-          <h3 className="text-l md:text-xl md:w-3/12 float-left">
-            <FontAwesomeIcon icon={faGithub} /> sullie-dev
-          </h3>
-        </a>
+        </div>
+        <div className="w-full float-left md:w-6/12 lg:w-3/12">
+          <a
+            href="http://twitter.com/drunkdarthvader"
+            aria-label="Follow me on Twitter @drunkdarthvader"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <h3 className="text-l md:text-xl md:w-3/12">
+              <FontAwesomeIcon icon={faTwitter} /> @drunkdarthvader
+            </h3>
+          </a>
+        </div>
+        <div className="w-full float-left md:w-6/12 lg:w-3/12">
+          <a
+            href="http://instagram.com/drunkdarkvader"
+            aria-label="Follow my on Instagram @sullie-dev"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <h3 className="text-l md:text-xl md:w-3/12">
+              <FontAwesomeIcon icon={faInstagram} /> @drunkdarkvader
+            </h3>
+          </a>
+        </div>
+        <div className="w-full float-left md:w-6/12 lg:w-3/12">
+          <a
+            href="http://github.com/sullie-dev"
+            aria-label="Follow my on Github @sullie-dev"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <h3 className="text-l md:text-xl md:w-3/12">
+              <FontAwesomeIcon icon={faGithub} /> sullie-dev
+            </h3>
+          </a>
+        </div>
       </div>
       <Footer />
     </div>
