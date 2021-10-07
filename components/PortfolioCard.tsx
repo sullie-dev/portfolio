@@ -11,7 +11,7 @@ export interface CardProps {
 export default function PortfolioCard(props: CardProps): ReactElement {
   return (
     <div className="alighn-center w-full p-3 float-left md:w-6/12 lg:w-3/12">
-      <h1>{props.title}</h1>
+      <h1 className="text-center text-l font-bold">{props.title}</h1>
       <Image
         src={props.image}
         alt={props.title}
@@ -20,6 +20,7 @@ export default function PortfolioCard(props: CardProps): ReactElement {
         layout="responsive"
         objectFit="contain"
       />
+      <h3 className="text-center font-semibold">Technology used </h3>
       <ul>
         {props.stack.map((stacks) => (
           <li key={stacks}>{stacks}</li>

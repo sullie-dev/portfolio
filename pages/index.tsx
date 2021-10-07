@@ -11,7 +11,6 @@ import {
   faTwitter,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { GetStaticProps } from "next";
 import client from "../lib/sanity";
 
 interface projectProp {
@@ -66,8 +65,8 @@ const Home: NextPage = ({ data }: any) => {
           <h1 className="text-gray-600 text-2xl sm:text-4xl md:text-6xl">
             Eoghan O Sullivan
           </h1>
-          <h2 className="text-gray-500 text-xl sm:text-2xl md:text-4xl">
-            Web Developer
+          <h2 className="mt-2 text-gray-500 text-xl sm:text-2xl md:text-4xl">
+            Web Developer based in Co.Cork, Ireland
           </h2>
         </div>
         <div className="m-auto w-7/12 p-7 sm:float-right md:w-5/12">
