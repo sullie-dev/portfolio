@@ -102,7 +102,7 @@ const Home: NextPage = ({ data }: any) => {
             rel="noreferrer noopener"
             target="_blank"
           >
-            <h3 className="text-l md:text-xl md:w-3/12">
+            <h3 className="text-l text-center md:text-xl md:w-3/12">
               <FontAwesomeIcon icon={faTwitter} /> @drunkdarthvader
             </h3>
           </a>
@@ -114,7 +114,7 @@ const Home: NextPage = ({ data }: any) => {
             rel="noreferrer noopener"
             target="_blank"
           >
-            <h3 className="text-l md:text-xl md:w-3/12">
+            <h3 className="text-l text-center md:text-xl md:w-3/12">
               <FontAwesomeIcon icon={faInstagram} /> @drunkdarkvader
             </h3>
           </a>
@@ -126,7 +126,7 @@ const Home: NextPage = ({ data }: any) => {
             rel="noreferrer noopener"
             target="_blank"
           >
-            <h3 className="text-l md:text-xl md:w-3/12">
+            <h3 className="text-l text center md:text-xl md:w-3/12">
               <FontAwesomeIcon icon={faGithub} /> sullie-dev
             </h3>
           </a>
