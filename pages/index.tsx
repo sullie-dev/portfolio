@@ -126,7 +126,7 @@ const Home: NextPage = ({ data }: any) => {
             rel="noreferrer noopener"
             target="_blank"
           >
-            <h3 className="text-l text center md:text-xl md:w-3/12">
+            <h3 className="text-l text-center text center md:text-xl md:w-3/12">
               <FontAwesomeIcon icon={faGithub} /> sullie-dev
             </h3>
           </a>
