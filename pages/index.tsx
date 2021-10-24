@@ -1,9 +1,16 @@
 import type { NextPage } from "next";
+import {
+  Flex,
+  Spacer,
+  Text,
+  Image,
+  Heading,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import Head from "next/head";
-import Image from "next/image";
 import Footer from "../components/Footer";
 import PortfolioCard from "../components/PortfolioCard";
-import portfolioImg from "/public/portfolio.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -12,6 +19,7 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import client from "../lib/sanity";
+import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 interface projectProp {
   project_name: string;
@@ -60,19 +68,27 @@ const Home: NextPage = ({ data }: any) => {
           content="developer, web developer, irish developer, react.js developer"
         />
       </Head>
-      <div className="flex flex-col md:flex-row">
-        <div className="text-center p-7 sm:float-right md:w-11/12  md:py-64">
-          <h1 className="text-gray-600 text-2xl sm:text-4xl md:text-6xl">
-            Eoghan O Sullivan
-          </h1>
-          <h2 className="mt-2 text-gray-500 text-xl sm:text-2xl md:text-4xl">
-            Web Developer based in Co.Cork, Ireland
-          </h2>
-        </div>
-        <div className="m-auto w-7/12 p-7 sm:float-right md:w-5/12">
-          <Image src={portfolioImg} className=" rounded-full " />
-        </div>
-      </div>
+      <Wrap p="15px">
+        <WrapItem>
+          <Flex flexDirection="column">
+            <Heading w="650px" h="fit-content" fontSize="6xl" color="gray.800">
+              Eoghan O Sullivan
+            </Heading>
+            <Text fontSize="xl " color="gray.500">
+              Web Developer based in Co.Cork, Ireland
+            </Text>
+          </Flex>
+        </WrapItem>
+        <Spacer />
+        <WrapItem>
+          <Image
+            borderRadius="full"
+            boxSize="500px"
+            src="/portfolio.jpg"
+            alt="Eoghan O'Sullivan"
+          />
+        </WrapItem>
+      </Wrap>
       <div className="inline-block w-full">
         <h2 className="text-center mb-12 text-2xl md:text-2xl">Projects</h2>
         {projectData.map((project: projectProp) => (
