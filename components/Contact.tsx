@@ -23,6 +23,8 @@ export default function Contact() {
         h="fit-content"
         fontSize={["xl", "5xl"]}
         color="gray.800"
+        py={[2, 4, 6, 8]}
+        px="1"
       >
         Contact me
       </Heading>

@@ -7,6 +7,7 @@ import {
   Heading,
   Wrap,
   WrapItem,
+  Center,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Footer from "../components/Footer";
@@ -88,7 +89,7 @@ const Home: NextPage = ({ data }: any) => {
           />
         </WrapItem>
       </Wrap>
-      <Wrap>
+      <Wrap py={[2, 4, 6, 8]} px="1">
         <Heading
           w="650px"
           h="fit-content"
@@ -97,15 +98,19 @@ const Home: NextPage = ({ data }: any) => {
         >
           Projects
         </Heading>
-        {projectData.map((project: projectProp) => (
-          <PortfolioCard
-            key={project.project_name}
-            title={project.project_name}
-            url={project.url}
-            stack={project.stack}
-            image={project.image.url}
-          />
-        ))}
+        <Wrap>
+          {projectData.map((project: projectProp) => (
+            <WrapItem w={["100%", "32%"]} p={[2, 4, 6, 8]}>
+              <PortfolioCard
+                key={project.project_name}
+                title={project.project_name}
+                url={project.url}
+                stack={project.stack}
+                image={project.image.url}
+              />
+            </WrapItem>
+          ))}
+        </Wrap>
       </Wrap>
       <Contact />
       <Footer />
