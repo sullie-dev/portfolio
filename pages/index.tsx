@@ -100,7 +100,11 @@ const Home: NextPage = ({ data }: any) => {
         </Heading>
         <Wrap>
           {projectData.map((project: projectProp) => (
-            <WrapItem w={["100%", "32%"]} p={[2, 4, 6, 8]}>
+            <WrapItem
+              w={["100%", "32%"]}
+              p={[2, 4, 6, 8]}
+              key={`${project.project_name} wrap`}
+            >
               <PortfolioCard
                 key={project.project_name}
                 title={project.project_name}
