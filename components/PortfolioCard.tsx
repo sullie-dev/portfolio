@@ -28,7 +28,7 @@ export default function PortfolioCard(props: CardProps): ReactElement {
       <Heading fontSize={["m", "l"]}>Technology used </Heading>
       <UnorderedList>
         {props.stack.map((stacks) => (
-          <List>
+          <List key={`${props.title} stack`}>
             <ListItem key={stacks}>{stacks}</ListItem>
           </List>
         ))}
