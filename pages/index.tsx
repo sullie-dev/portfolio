@@ -118,6 +118,15 @@ const Home: NextPage = ({ data }: any) => {
       </Wrap>
       <Contact />
       <Footer />
+      {/* <!-- Start of HubSpot Embed Code --> */}
+      <script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js-eu1.hs-scripts.com/25412047.js"
+      ></script>
+      {/* <!-- End of HubSpot Embed Code --> */}
     </div>
   );
 };
