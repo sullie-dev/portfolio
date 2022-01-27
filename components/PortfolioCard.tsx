@@ -9,6 +9,7 @@ export interface CardProps {
   image: any;
   stack: string[];
   url: string;
+  github: string;
 }
 
 export default function PortfolioCard(props: CardProps): ReactElement {
@@ -38,9 +39,19 @@ export default function PortfolioCard(props: CardProps): ReactElement {
           href={props.url}
           target="_blank"
           rel="noreferrer"
-          aria-label={`You arere going to view my ${props.title} project`}
+          aria-label={`You are going to view my ${props.title} project`}
         >
-          Visit the project
+          View the {props.title}
+        </a>
+      </Button>
+      <Button>
+        <a
+          href={props.github}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`You are going to view my ${props.title} project`}
+        >
+          View the project on GitHub
         </a>
       </Button>
     </Container>

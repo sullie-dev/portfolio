@@ -18,12 +18,14 @@ interface projectProp {
   url: string;
   stack: string[];
   image: any;
+  github: string;
 }
 
 // Create a query called homepageQuery
 const projectQuery = `*[_type == "projects"]{
   project_name,
   url,
+  github,
   image {
     ...asset->
   },
@@ -111,6 +113,7 @@ const Home: NextPage = ({ data }: any) => {
                 key={project.project_name}
                 title={project.project_name}
                 url={project.url}
+                github={project.github}
                 stack={project.stack}
                 image={project.image.url}
               />
