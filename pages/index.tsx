@@ -1,20 +1,17 @@
 import type { NextPage } from "next";
 import {
-  Flex,
-  Spacer,
   Text,
   Image,
   Heading,
+  Container,
+  Flex,
   Wrap,
   WrapItem,
-  Center,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import PortfolioCard from "../components/PortfolioCard";
-
 import client from "../lib/sanity";
-import Contact from "../components/Contact";
 
 interface projectProp {
   project_name: string;
@@ -63,45 +60,50 @@ const Home: NextPage = ({ data }: any) => {
           content="developer, web developer, irish developer, react.js developer"
         />
       </Head>
-      <Wrap py={[2, 4, 6, 8]} px="1">
-        <WrapItem>
-          <Flex flexDirection="column">
-            <Heading
-              w="650px"
-              h="fit-content"
-              fontSize={["2xl", "6xl"]}
-              color="gray.800"
-            >
-              Eoghan O Sullivan
-            </Heading>
-            <Text fontSize={["l", "2xl"]} color="gray.500">
-              Web Developer based in Co.Cork, Ireland
-            </Text>
-          </Flex>
-        </WrapItem>
-        <Spacer />
-        <WrapItem h="100%">
+      <Flex width={["100vw"]} height={["auto", "45vh", "75vh"]}>
+        <Container
+          width={["100vw", "50vw"]}
+          height={["50vh", "100vh"]}
+          py={[8, 12, 16]}
+          px={[4, 3, 1]}
+          flex={1}
+          centerContent
+        >
+          <Heading fontSize={["3xl", "3xl", "6xl"]} color="gray.800">
+            Eoghan O&apos;Sullivan
+          </Heading>
+          <Text fontSize={["l", "xl", "2xl"]} color="gray.500">
+            Web Developer based in Co.Cork, Ireland
+          </Text>
+        </Container>
+        <Container
+          width={"fit-content"}
+          height={"fit-content"}
+          py={[4, 6, 8]}
+          flex={1}
+          display={["none", "none", "block"]}
+          centerContent
+        >
           <Image
             borderRadius="full"
-            boxSize={["390px", "500px"]}
             src="/portfolio.jpg"
             alt="Eoghan O'Sullivan"
+            w="75%"
           />
-        </WrapItem>
-      </Wrap>
+        </Container>
+      </Flex>
+      <Flex width={["50vw"]}>
+        <Container width="100vw" height="fit-content" flex={1}>
+          <Heading fontSize={["xl", "2xl", "4xl"]} color={"gray.800"}>
+            Projects
+          </Heading>
+        </Container>
+      </Flex>
       <Wrap py={[2, 4, 6, 8]} px="1">
-        <Heading
-          w="650px"
-          h="fit-content"
-          fontSize={["xl", "5xl"]}
-          color="gray.800"
-        >
-          Projects
-        </Heading>
         <Wrap>
           {projectData.map((project: projectProp) => (
             <WrapItem
-              w={["100%", "32%"]}
+              w={["100%", "100%", "47%", "32%"]}
               p={[2, 4, 6, 8]}
               key={`${project.project_name} wrap`}
             >
@@ -116,17 +118,7 @@ const Home: NextPage = ({ data }: any) => {
           ))}
         </Wrap>
       </Wrap>
-      <Contact />
       <Footer />
-      {/* <!-- Start of HubSpot Embed Code --> */}
-      <script
-        type="text/javascript"
-        id="hs-script-loader"
-        async
-        defer
-        src="//js-eu1.hs-scripts.com/25412047.js"
-      ></script>
-      {/* <!-- End of HubSpot Embed Code --> */}
     </div>
   );
 };
