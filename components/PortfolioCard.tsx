@@ -2,7 +2,13 @@ import React, { ReactElement } from "react";
 // import Image from "next/image";
 import { Container, Heading } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
-import { List, ListItem, UnorderedList, Button } from "@chakra-ui/react";
+import {
+  List,
+  ListItem,
+  UnorderedList,
+  Button,
+  Spacer,
+} from "@chakra-ui/react";
 
 export interface CardProps {
   title: string;
@@ -44,6 +50,7 @@ export default function PortfolioCard(props: CardProps): ReactElement {
           View the {props.title}
         </a>
       </Button>
+      <Spacer h="12px" />
       <Button>
         <a
           href={props.github}
